@@ -22,7 +22,7 @@ Under the hood it uses the official Windows power API, the same mechanism video 
 
 ## Download
 
-1. Download `caffeinate.exe` from the [latest release](https://github.com/janhavitripurwar/caffeinate/releases/latest).
+1. Download `caffeinate.exe` from the [latest release](https://github.com/<your-github-username>/caffeinate/releases/latest).
 2. Open a terminal in the folder where you saved it and run:
 
    ```powershell
@@ -67,7 +67,7 @@ powercfg /requests
 No SDK is needed. The build uses the C# compiler that already ships with Windows.
 
 ```powershell
-git clone https://github.com/janhavitripurwar/caffeinate.git
+git clone https://github.com/<your-github-username>/caffeinate.git
 cd caffeinate
 .\build.ps1
 ```

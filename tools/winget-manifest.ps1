@@ -40,6 +40,9 @@ if ($ExePath) {
     $exe = Join-Path ([IO.Path]::GetTempPath()) "caffeinate-$Version.exe"
     Invoke-WebRequest $url -OutFile $exe -UseBasicParsing
 }
+$reported = (& $exe --version) -replace '^caffeinate\s+', ''
+if ($reported -ne $Version) { throw "caffeinate.exe reports version '$reported', expected '$Version'. Rebuild and re-upload the release." }
+
 $sha = (Get-FileHash $exe -Algorithm SHA256).Hash
 
 $dir = Join-Path $root "winget\manifests\$($Owner.Substring(0,1).ToLower())\$Owner\caffeinate\$Version"

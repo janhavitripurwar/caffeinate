@@ -22,7 +22,7 @@ using System.Threading;
 
 static class Caffeinate
 {
-    // Bump this for each release; the release workflow checks it matches the git tag.
+    // Bump this for each release; tools/winget-manifest.ps1 checks the released .exe reports it.
     public const string Version = "0.1.0";
 
     const string Reason = "caffeinate: preventing sleep";
