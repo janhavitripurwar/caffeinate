@@ -20,18 +20,32 @@ Press **Ctrl+C** and your normal sleep settings come back. Nothing is changed pe
 
 Under the hood it uses the official Windows power API, the same mechanism video players use to stop your screen turning off mid-movie. Nothing fakes mouse movement or key presses.
 
-## Download
+## Install
 
-1. Download `caffeinate.exe` from the [latest release](https://github.com/janhavitripurwar/caffeinate/releases/latest).
-2. Open a terminal in the folder where you saved it and run:
+Paste this into **PowerShell**:
 
-   ```powershell
-   .\caffeinate.exe -d
-   ```
+```powershell
+irm https://raw.githubusercontent.com/janhavitripurwar/caffeinate/main/install.ps1 | iex
+```
 
-That's it. It works on 64-bit Windows 10 and 11, and there's nothing else to install.
+Or into **Command Prompt**:
 
-> Windows may show a SmartScreen warning the first time, because the file isn't code-signed yet. Click **More info → Run anyway**.
+```
+powershell -c "irm https://raw.githubusercontent.com/janhavitripurwar/caffeinate/main/install.ps1 | iex"
+```
+
+Then open a new terminal window, and `caffeinate -d` works from anywhere. No admin rights needed. It works on 64-bit Windows 10 and 11.
+
+<details>
+<summary>What the installer does, and how to uninstall</summary>
+
+It downloads `caffeinate.exe` from the latest release into `%LOCALAPPDATA%\Programs\caffeinate` and adds that folder to your user PATH. Run it again any time to update. You can read [install.ps1](install.ps1) before running it.
+
+To uninstall, delete `%LOCALAPPDATA%\Programs\caffeinate` and remove it from your user PATH (Start → "Edit environment variables for your account").
+
+Prefer not to run a script? Download `caffeinate.exe` from the [latest release](https://github.com/janhavitripurwar/caffeinate/releases/latest) and run it from that folder. Windows may show a SmartScreen warning the first time, because the file isn't code-signed yet: click **More info → Run anyway**.
+
+</details>
 
 ## Usage
 
